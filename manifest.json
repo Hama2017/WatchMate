@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "WatchMate",
+  "version": "1.0",
+  "description": "WatchMate permet à tous les utilisateurs de Netflix de noter et de commenter les films et séries qu'ils regardent, afin de partager leurs impressions avec la communauté. Plus besoin de passer des heures à juger si un film ou une série est cool ou pas – avec WatchMate, on va tous kiffer ensemble ! 😎🎬",
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://netflix54.p.rapidapi.com/*",
+    "http://localhost/api-watchmate/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "default_title": "WatchMate - Notez et commentez vos films et séries Netflix !",
+    "background": {
+      "page": "background.html"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.netflix.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "author": "Hamadou Ba"
+
+}
